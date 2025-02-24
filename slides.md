@@ -109,7 +109,7 @@ config.name = "whatever"; //Applicable!
 
 <v-click>
 
-Runtime immutability!
+Build-time immutability!
 
 ```ts twoslash
 const config = {
@@ -503,8 +503,16 @@ Does Typescript use nominal or structural typing? (Senior Engineer interview que
 Think about this for a sec!
 
 ```ts twoslash
-let ball = { diameter: 10 };
-let sphere = { diameter: 20 };
+type Sphere = {
+  diameter: number;
+};
+
+type Shape = {
+  diameter: number;
+};
+
+let ball: Sphere = { diameter: 10 };
+let sphere: Shape = { diameter: 20 };
 
 sphere = ball;
 ```
